@@ -116,8 +116,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: 'OngoingMatchDetail',
   data(){
@@ -156,7 +154,6 @@ export default {
       }
     }
   }
-
 }
 </script>
 
@@ -165,29 +162,29 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: #fff;
   min-height: 100vh;
-  padding-bottom: 80px; /* 预留底部评论区空间 */
+  padding-bottom: 21.333vw; /* 80px */
 }
 
 /* 顶部导航 */
 .top-header {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 4.267vw; /* 16px */
   background-color: #f8f9fa;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.267vw solid #eee; /* 1px */
   position: relative;
 }
 
 .back-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 5.333vw; /* 20px */
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 1.067vw 2.133vw; /* 4px 8px */
 }
 
 .match-title {
-  font-size: 18px;
+  font-size: 4.8vw; /* 18px */
   font-weight: 600;
   margin: 0;
   flex: 1;
@@ -196,17 +193,17 @@ export default {
 
 .match-type {
   position: absolute;
-  right: 16px;
+  right: 4.267vw; /* 16px */
   color: #888;
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
 }
 
 /* 比赛状态 */
 .match-status {
   color: #f5222d; /* 红色表示进行中 */
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   text-align: center;
-  padding: 12px 0;
+  padding: 3.2vw 0; /* 12px 0 */
   font-weight: 500;
 }
 
@@ -215,8 +212,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+  padding: 5.333vw 0; /* 20px 0 */
+  border-bottom: 0.267vw solid #eee; /* 1px */
 }
 
 .team {
@@ -227,19 +224,19 @@ export default {
 }
 
 .team-logo {
-  width: 60px;
-  height: 60px;
+  width: 16vw; /* 60px */
+  height: 16vw; /* 60px */
   border-radius: 50%;
   background-color: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 6.4vw; /* 24px */
+  margin-bottom: 2.133vw; /* 8px */
 }
 
 .team-name {
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   font-weight: 500;
 }
 
@@ -248,36 +245,36 @@ export default {
 }
 
 .main-score {
-  font-size: 32px;
+  font-size: 8.533vw; /* 32px */
   font-weight: bold;
-  margin: 0 0 4px 0;
+  margin: 0 0 1.067vw 0; /* 0 0 4px 0 */
 }
 
 .half-score {
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
   color: #666;
-  margin: 0 0 4px 0;
+  margin: 0 0 1.067vw 0; /* 0 0 4px 0 */
 }
 
 .extra-time {
-  font-size: 12px;
+  font-size: 3.2vw; /* 12px */
   color: #f5222d;
   margin: 0;
 }
 
 /* 通用区域标题 */
 .section-title {
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   font-weight: 600;
-  padding: 12px 16px;
-  border-bottom: 1px solid #eee;
+  padding: 3.2vw 4.267vw; /* 12px 16px */
+  border-bottom: 0.267vw solid #eee; /* 1px */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .expand-icon {
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
   color: #888;
 }
 
@@ -289,16 +286,16 @@ export default {
 }
 
 .event-item {
-  padding: 12px 16px;
-  border-bottom: 1px solid #f5f5f5;
+  padding: 3.2vw 4.267vw; /* 12px 16px */
+  border-bottom: 0.267vw solid #f5f5f5; /* 1px */
   display: flex;
   align-items: center;
 }
 
 .event-time {
-  min-width: 40px;
+  min-width: 10.667vw; /* 40px */
   font-weight: 500;
-  margin-right: 12px;
+  margin-right: 3.2vw; /* 12px */
   color: #666;
 }
 
@@ -339,13 +336,13 @@ export default {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
+  gap: 0.267vw; /* 1px */
   background-color: #f5f5f5;
 }
 
 .stat-item {
   background-color: #fff;
-  padding: 12px 16px;
+  padding: 3.2vw 4.267vw; /* 12px 16px */
   display: flex;
   justify-content: space-between;
 }
@@ -360,37 +357,37 @@ export default {
 
 /* 首发阵容 */
 .lineup-placeholder {
-  padding: 24px 16px;
+  padding: 6.4vw 4.267vw; /* 24px 16px */
   text-align: center;
   color: #888;
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
 }
 
 /* 观众评论 */
 .comments-list {
-  padding: 16px;
+  padding: 4.267vw; /* 16px */
 }
 
 .comment-item {
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #f5f5f5;
+  margin-bottom: 4.267vw; /* 16px */
+  padding-bottom: 4.267vw; /* 16px */
+  border-bottom: 0.267vw solid #f5f5f5; /* 1px */
 }
 
 .comment-author {
   font-weight: 500;
-  margin-bottom: 4px;
+  margin-bottom: 1.067vw; /* 4px */
 }
 
 .comment-content {
-  margin-bottom: 8px;
+  margin-bottom: 2.133vw; /* 8px */
   color: #333;
 }
 
 .comment-actions {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 3.2vw; /* 12px */
   color: #888;
 }
 
@@ -401,8 +398,8 @@ export default {
 /* 评论输入区 */
 .comment-input-area {
   display: flex;
-  padding: 12px 16px;
-  border-top: 1px solid #eee;
+  padding: 3.2vw 4.267vw; /* 12px 16px */
+  border-top: 0.267vw solid #eee; /* 1px */
   position: fixed;
   bottom: 0;
   left: 0;
@@ -412,21 +409,21 @@ export default {
 
 .comment-input {
   flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
+  padding: 2.133vw 3.2vw; /* 8px 12px */
+  border: 0.267vw solid #ddd; /* 1px */
+  border-radius: 5.333vw; /* 20px */
   outline: none;
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
 }
 
 .publish-btn {
-  margin-left: 8px;
-  padding: 8px 16px;
+  margin-left: 2.133vw; /* 8px */
+  padding: 2.133vw 4.267vw; /* 8px 16px */
   background-color: #1677ff;
   color: #fff;
   border: none;
-  border-radius: 20px;
+  border-radius: 5.333vw; /* 20px */
   cursor: pointer;
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
 }
 </style>

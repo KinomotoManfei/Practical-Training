@@ -1,6 +1,5 @@
 <template>
   <base-match :match-info="matchInfo">
-    <!-- 比分区域 -->
     <div class="score-section">
       <div class="team team-left">
         <div class="team-logo">{{ matchInfo.teamA.logo }}</div>
@@ -19,14 +18,12 @@
       </div>
     </div>
 
-    <!-- 比赛事件 -->
     <div class="match-events">
       <div class="section-title">
         比赛事件
         <i class="expand-icon">▼</i>
       </div>
       <ul class="event-list">
-        <!-- 使用过滤后的事件数组 -->
         <li class="event-item" :class="event.type" v-for="(event, i) in filteredEvents" :key="i">
           <span class="event-time">{{ event.time }}</span>
           <span class="event-content">{{ event.content }}</span>
@@ -34,7 +31,6 @@
       </ul>
     </div>
 
-    <!-- 技术统计 -->
     <div class="tech-stats">
       <div class="section-title">技术统计</div>
       <div class="stats-grid">
@@ -45,7 +41,6 @@
       </div>
     </div>
 
-    <!-- 其他通用区域 -->
     <div class="lineup-section">
       <div class="section-title">首发阵容</div>
       <div class="lineup-placeholder">
@@ -91,7 +86,6 @@ export default {
       required: true,
       validator: value => ['football', 'basketball', 'tabletennis', 'badminton', 'water'].includes(value)
     },
-    // 添加比赛类型属性，默认为混双
     matchType: {
       type: String,
       default: 'doubles',
@@ -99,7 +93,7 @@ export default {
     }
   },
   created() {
-    console.log('当前matchType:', this.matchType); // 若输出'doubles'，则说明参数未传递成功
+    console.log('当前matchType:', this.matchType);
   },
   data() {
     return {
@@ -114,12 +108,11 @@ export default {
   },
   computed: {
     matchInfo() {
-      // 不同运动项目的配置
       const sportConfigs = {
         football: {
           title: '足球联赛半决赛',
           sportType: '足球',
-          status: 'ongoing',
+          status: 'finished',
           teamA: { name: '软工队', logo: '⚽' },
           teamB: { name: '计院队', logo: '⚽' },
           scoreA: 1,
@@ -141,7 +134,7 @@ export default {
         basketball: {
           title: '篮球友谊赛',
           sportType: '篮球',
-          status: 'ongoing',
+          status: 'finished',
           teamA: { name: '经管队', logo: '🏀' },
           teamB: { name: '外语队', logo: '🏀' },
           scoreA: 56,
@@ -162,7 +155,7 @@ export default {
         tabletennis: {
           title: '乒乓球团体赛',
           sportType: '乒乓球',
-          status: 'ongoing',
+          status: 'finished',
           teamA: { name: '研究生院队', logo: '🏓' },
           teamB: { name: '本科生队', logo: '🏓' },
           scoreA: 2,
@@ -181,13 +174,12 @@ export default {
           ]
         },
         badminton: {
-          // 根据比赛类型返回不同配置
           ...(this.matchType === 'singles'
             ? {
                 title: '羽毛球单打决赛',
                 sportType: '羽毛球',
-                status: 'ongoing',
-                teamA: { name: '林丹', logo: '🏸' },  // 单打为个人
+                status: 'finished',
+                teamA: { name: '林丹', logo: '🏸' },
                 teamB: { name: '李宗伟', logo: '🏸' },
                 scoreA: 1,
                 scoreB: 1,
@@ -203,14 +195,14 @@ export default {
                   { name: '局分', teamA: 1, teamB: 1 },
                   { name: '发球得分', teamA: 6, teamB: 5 },
                   { name: '网前得分', teamA: 9, teamB: 12 },
-                  { name: '扣杀得分', teamA: 18, teamB: 14 },  // 单打扣杀更多
+                  { name: '扣杀得分', teamA: 18, teamB: 14 },
                   { name: '失误', teamA: 7, teamB: 6 }
                 ]
               }
             : {
                 title: '羽毛球混双决赛',
                 sportType: '羽毛球',
-                status: 'ongoing',
+                status: 'finished',
                 teamA: { name: '赵阳/孙梅', logo: '🏸' },
                 teamB: { name: '钱峰/周琳', logo: '🏸' },
                 scoreA: 1,
@@ -232,7 +224,7 @@ export default {
         water: {
           title: '游泳4x100米接力',
           sportType: '水上运动',
-          status: 'ongoing',
+          status: 'finished',
           teamA: { name: '红队', logo: '🏊' },
           teamB: { name: '蓝队', logo: '🏊' },
           scoreA: 3,
@@ -254,7 +246,6 @@ export default {
       return sportConfigs[this.sportType]
     },
     periodScore() {
-      // 根据不同运动显示不同的时段比分
       const periodMap = {
         football: '半场1-1',
         basketball: '第三节 56-48',
@@ -266,16 +257,11 @@ export default {
       }
       return periodMap[this.sportType]
     },
-    // 添加计算属性用于过滤事件
     filteredEvents() {
-      // 根据运动类型过滤事件，这里示例为排除灰色类型的事件
-      // 您可以根据实际需求修改过滤逻辑
       return this.matchInfo.events.filter(event => {
-        // 足球项目排除灰色事件（如"上半场结束"）
         if (this.sportType === 'football') {
           return event.type !== 'gray';
         }
-        // 其他项目不过滤，返回所有事件
         return true;
       });
     }
@@ -297,26 +283,23 @@ export default {
 </script>
 
 <style scoped>
-/* 原有样式保持不变，根据需要调整运动项目特有样式 */
-/* 比分区域 */
 .score-section {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+  padding: 5.3333vw 0;
+  border-bottom: 0.2667vw solid #eee;
 }
 .half-scores {
-  font-size: 14px;
+  font-size: 3.7333vw;
   color: #666;
-  margin: 0 0 4px 0;
+  margin: 0 0 1.0667vw 0;
 }
 
 .half-scores span {
-  margin: 0 4px;
+  margin: 0 1.0667vw;
 }
 
-/* 修复星星图标显示 */
 .star.filled::before {
   content: "★";
   color: #ffcc00;
@@ -330,29 +313,28 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: #fff;
   min-height: 100vh;
-  padding-bottom: 20px;
+  padding-bottom: 5.3333vw;
 }
 
-/* 顶部导航 */
 .top-nav {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 4.2667vw;
   background-color: #f8f9fa;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.2667vw solid #eee;
   position: relative;
 }
 
 .back-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 5.3333vw;
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 1.0667vw 2.1333vw;
 }
 
 .match-title {
-  font-size: 18px;
+  font-size: 4.8vw;
   font-weight: 600;
   margin: 0;
   flex: 1;
@@ -360,29 +342,19 @@ export default {
 }
 
 .match-type {
-  color: #4caf50; /* 足球绿色 */
-  font-size: 14px;
+  color: #4caf50;
+  font-size: 3.7333vw;
   position: absolute;
-  right: 16px;
+  right: 4.2667vw;
 }
 
-/* 比赛状态 */
 .match-status {
-  color: #666; /* 已结束灰色 */
-  font-size: 16px;
+  color: #666;
+  font-size: 4.2667vw;
   text-align: center;
-  padding: 12px 0;
+  padding: 3.2vw 0;
   font-weight: 500;
-  border-bottom: 1px solid #eee;
-}
-
-/* 比分区域 */
-.score-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.2667vw solid #eee;
 }
 
 .team {
@@ -393,19 +365,19 @@ export default {
 }
 
 .team-logo {
-  width: 60px;
-  height: 60px;
+  width: 16vw;
+  height: 16vw;
   border-radius: 50%;
   background-color: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 6.4vw;
+  margin-bottom: 2.1333vw;
 }
 
 .team-name {
-  font-size: 16px;
+  font-size: 4.2667vw;
   font-weight: 500;
 }
 
@@ -414,60 +386,57 @@ export default {
 }
 
 .main-score {
-  font-size: 36px;
+  font-size: 9.6vw;
   font-weight: bold;
-  margin: 0 0 8px 0;
+  margin: 0 0 2.1333vw 0;
 }
 
 .half-scores {
-  font-size: 14px;
+  font-size: 3.7333vw;
   color: #666;
-  margin: 0 0 4px 0;
+  margin: 0 0 1.0667vw 0;
 }
 
 .match-time, .match-venue {
-  font-size: 12px;
+  font-size: 3.2vw;
   color: #888;
-  margin: 2px 0;
+  margin: 0.5333vw 0;
 }
 
-/* 通用区域标题 */
 .section-title {
-  font-size: 16px;
+  font-size: 4.2667vw;
   font-weight: 600;
-  padding: 16px 16px 8px;
+  padding: 4.2667vw 4.2667vw 2.1333vw;
   margin: 0;
   color: #333;
 }
 
-/* 详细战报 */
 .report-content {
-  padding: 0 16px 16px;
+  padding: 0 4.2667vw 4.2667vw;
   margin: 0;
-  font-size: 14px;
+  font-size: 3.7333vw;
   line-height: 1.6;
   color: #555;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.2667vw solid #eee;
 }
 
-/* 技术统计 */
 .stats-section {
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.2667vw solid #eee;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
+  gap: 0.2667vw;
   background-color: #f5f5f5;
 }
 
 .stat-item {
   background-color: #fff;
-  padding: 12px 16px;
+  padding: 3.2vw 4.2667vw;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 3.7333vw;
 }
 
 .stat-name {
@@ -478,21 +447,20 @@ export default {
   font-weight: 500;
 }
 
-/* 球员评分 */
 .players-rating {
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.2667vw solid #eee;
 }
 
 .team-ratings {
-  margin-bottom: 16px;
+  margin-bottom: 4.2667vw;
 }
 
 .player-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid #f5f5f5;
+  padding: 3.2vw 4.2667vw;
+  border-bottom: 0.2667vw solid #f5f5f5;
 }
 
 .player-info {
@@ -501,17 +469,17 @@ export default {
 }
 
 .player-icon {
-  margin-right: 8px;
-  font-size: 16px;
+  margin-right: 2.1333vw;
+  font-size: 4.2667vw;
 }
 
 .player-name {
-  font-size: 14px;
-  margin-right: 16px;
+  font-size: 3.7333vw;
+  margin-right: 4.2667vw;
 }
 
 .player-score {
-  font-size: 14px;
+  font-size: 3.7333vw;
   font-weight: 500;
   color: #1677ff;
 }
@@ -522,29 +490,28 @@ export default {
 
 .star {
   color: #ddd;
-  margin-left: 2px;
+  margin-left: 0.5333vw;
 }
 
 .star.filled {
   color: #ffcc00;
 }
 
-/* 精彩瞬间 */
 .highlights-tabs {
   display: flex;
-  padding: 0 16px;
-  margin-bottom: 12px;
+  padding: 0 4.2667vw;
+  margin-bottom: 3.2vw;
 }
 
 .tab-btn {
   flex: 1;
-  padding: 8px 0;
+  padding: 2.1333vw 0;
   background-color: #f5f5f5;
   border: none;
-  font-size: 14px;
+  font-size: 3.7333vw;
   cursor: pointer;
-  margin-right: 8px;
-  border-radius: 4px;
+  margin-right: 2.1333vw;
+  border-radius: 1.0667vw;
 }
 
 .tab-btn:last-child {
@@ -558,31 +525,30 @@ export default {
 
 .highlights-carousel {
   position: relative;
-  padding: 0 16px;
+  padding: 0 4.2667vw;
 }
 
 .highlight-img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 2.1333vw;
   display: block;
 }
 
 .carousel-dots {
   display: flex;
   justify-content: center;
-  margin-top: 12px;
+  margin-top: 3.2vw;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 2.1333vw;
+  height: 2.1333vw;
   border-radius: 50%;
   background-color: #ddd;
-  margin: 0 4px;
+  margin: 0 1.0667vw;
 }
 
 .dot.active {
   background-color: #1677ff;
 }
-/* 其他样式省略... */
 </style>

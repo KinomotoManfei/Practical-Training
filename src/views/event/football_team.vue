@@ -130,114 +130,108 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: #f5f5f5;
   min-height: 100vh;
-  padding-bottom: 20px;
+  padding-bottom: 5.3333vw;
 }
 
-/* 顶部导航 */
 .top-nav {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 4.2667vw;
   background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  margin-bottom: 16px;
+  box-shadow: 0 0.2667vw 0.8vw rgba(0,0,0,0.1);
+  margin-bottom: 4.2667vw;
 }
 
 .back-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 5.3333vw;
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 1.0667vw 2.1333vw;
 }
 
 .page-title {
-  font-size: 18px;
+  font-size: 4.8vw;
   font-weight: 600;
-  margin: 0 0 0 12px;
+  margin: 0 0 0 3.2vw;
 }
 
-/* 球队信息摘要 */
 .team-summary {
   display: flex;
   align-items: center;
   background-color: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  margin: 0 16px 16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  padding: 4.2667vw;
+  border-radius: 2.1333vw;
+  margin: 0 4.2667vw 4.2667vw;
+  box-shadow: 0 0.2667vw 0.8vw rgba(0,0,0,0.05);
 }
 
 .team-logo {
-  width: 60px;
-  height: 60px;
+  width: 16vw;
+  height: 16vw;
   border-radius: 50%;
   background-color: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  margin-right: 16px;
+  font-size: 6.4vw;
+  margin-right: 4.2667vw;
 }
 
 .team-name {
-  font-size: 16px;
+  font-size: 4.2667vw;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 2.1333vw;
 }
 
 .team-stats {
   display: flex;
-  gap: 16px;
-  font-size: 12px;
+  gap: 4.2667vw;
+  font-size: 3.2vw;
   color: #666;
 }
 
-/* 列表标题 */
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px 12px;
-  margin: 0 16px 12px;
-  border-bottom: 1px solid #eee;
+  padding: 0 4.2667vw 3.2vw;
+  margin: 0 4.2667vw 3.2vw;
+  border-bottom: 0.2667vw solid #eee;
 }
 
 .section-header h2 {
-  font-size: 16px;
+  font-size: 4.2667vw;
   margin: 0;
 }
 
 .count {
-  font-size: 12px;
+  font-size: 3.2vw;
   color: #888;
 }
 
-/* 球员列表 */
 .players-list {
-  padding: 0 16px;
+  padding: 0 4.2667vw;
 }
 
-/* 球员卡片（复用多个） */
 .player-card {
   display: flex;
   align-items: center;
   background-color: #fff;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-radius: 2.1333vw;
+  padding: 3.2vw;
+  margin-bottom: 3.2vw;
+  box-shadow: 0 0.2667vw 0.8vw rgba(0,0,0,0.05);
 }
 
-/* 球员头像与号码 */
 .player-avatar {
   position: relative;
-  margin-right: 16px;
+  margin-right: 4.2667vw;
 }
 
 .avatar-img {
-  width: 60px;
-  height: 60px;
+  width: 16vw;
+  height: 16vw;
   border-radius: 50%;
   object-fit: cover;
   background-color: #f0f0f0;
@@ -247,49 +241,47 @@ export default {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 22px;
-  height: 22px;
+  width: 5.8667vw;
+  height: 5.8667vw;
   background-color: #1677ff;
   color: white;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 3.2vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* 球员基本信息 */
 .player-basic {
   flex: 1;
-  margin-right: 16px;
+  margin-right: 4.2667vw;
 }
 
 .player-name {
-  font-size: 16px;
+  font-size: 4.2667vw;
   font-weight: 500;
-  margin-bottom: 6px;
+  margin-bottom: 1.6vw;
 }
 
 .player-position {
-  font-size: 12px;
+  font-size: 3.2vw;
   color: white;
   background-color: #666;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-left: 8px;
+  padding: 0.5333vw 1.6vw;
+  border-radius: 1.0667vw;
+  margin-left: 2.1333vw;
 }
 
 .player-details {
   display: flex;
-  gap: 12px;
-  font-size: 12px;
+  gap: 3.2vw;
+  font-size: 3.2vw;
   color: #666;
 }
 
-/* 球员数据统计 */
 .player-stats {
   display: flex;
-  gap: 16px;
+  gap: 4.2667vw;
 }
 
 .stat-item {
@@ -297,14 +289,14 @@ export default {
 }
 
 .stat-label {
-  font-size: 12px;
+  font-size: 3.2vw;
   color: #888;
-  margin-bottom: 4px;
+  margin-bottom: 1.0667vw;
   display: block;
 }
 
 .stat-value {
-  font-size: 14px;
+  font-size: 3.7333vw;
   font-weight: 600;
   color: #333;
 }

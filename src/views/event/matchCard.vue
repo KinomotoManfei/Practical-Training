@@ -55,16 +55,16 @@ export default {
       let sportsType = this.match.sports;
       let singleType = this.match.single;
       if (this.event_status === "未开始") {
-        if (sportsType === 'badminton'&&singleType) { // 假设match对象有sport字段标识项目
+        if (sportsType === 'badminton'&&singleType) {
             this.$router.push({
             path: '/event-to-start/badminton',
-            query: { matchType: 'singles' } // 携带单打类型参数
+            query: { matchType: 'singles' }
             });
         }
         else if(sportsType === 'badminton'&&!singleType){
           this.$router.push({
             path: '/event-to-start/badminton',
-            query: { matchType: 'double' } // 携带双打类型参数
+            query: { matchType: 'double' }
             });
         }
         else{
@@ -73,16 +73,16 @@ export default {
             });
         }
       } else if (this.event_status === "进行中") {
-        if (sportsType === 'badminton'&&singleType) { // 假设match对象有sport字段标识项目
+        if (sportsType === 'badminton'&&singleType) {
             this.$router.push({
             path: '/ongoing/badminton',
-            query: { matchType: 'singles' } // 携带单打类型参数
+            query: { matchType: 'singles' }
             });
         }
         else if(sportsType === 'badminton'&&!singleType){
           this.$router.push({
             path: '/ongoing/badminton',
-            query: { matchType: 'double' } // 携带双打类型参数
+            query: { matchType: 'double' }
             });
         }
         else{
@@ -91,16 +91,16 @@ export default {
             });
         }
       } else if (this.event_status === "已结束") {
-          if (sportsType === 'badminton'&&singleType) { // 假设match对象有sport字段标识项目
+          if (sportsType === 'badminton'&&singleType) {
             this.$router.push({
             path: '/finished/badminton',
-            query: { matchType: 'singles' } // 携带单打类型参数
+            query: { matchType: 'singles' }
             });
         }
         else if(sportsType === 'badminton'&&!singleType){
           this.$router.push({
             path: '/finished/badminton',
-            query: { matchType: 'double' } // 携带双打类型参数
+            query: { matchType: 'double' }
             });
         }
         else{
@@ -109,8 +109,6 @@ export default {
             });
         }
       }
-
-
     },
     gototeampage() {
       let sportsType = this.match.sports;
@@ -121,33 +119,32 @@ export default {
 </script>
 
 <style scoped>
-/* 样式部分保持不变 */
 .match-card {
-  border: 1px solid #eee;
-  border-radius: 4px;
-  padding: 16px;
+  border: 0.2667vw solid #eee;
+  border-radius: 1.0667vw;
+  padding: 4.2667vw;
   background-color: #fff;
 }
 
 .card-header {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 4.2667vw;
   color: #666;
   position: relative;
 }
 .match-time {
-  font-size: 14px;
+  font-size: 3.7333vw;
 }
 .match-title {
-  font-size: 14px;
+  font-size: 3.7333vw;
   position: absolute;
   font-weight: bold;
   left: 50%;
   transform: translateX(-50%);
 }
 .match-sports {
-  font-size: 14px;
+  font-size: 3.7333vw;
   margin-left: auto;
 }
 .team-info {
@@ -162,17 +159,17 @@ export default {
   width: 35%;
 }
 .team-name {
-  font-size: 16px;
-  margin: 0 0 8px 0;
+  font-size: 4.2667vw;
+  margin: 0 0 2.1333vw 0;
   font-weight: 500;
 }
 .team-icon {
-  margin-left: 4px;
-  font-size: 14px;
+  margin-left: 1.0667vw;
+  font-size: 3.7333vw;
   color: #ccc;
 }
 .player-info {
-  font-size: 12px;
+  font-size: 3.2vw;
   color: #888;
   margin: 0;
 }
@@ -182,22 +179,22 @@ export default {
   align-items: center;
 }
 .actual-score {
-  font-size: 20px;
+  font-size: 5.3333vw;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 2.1333vw;
 }
 .match-status {
-  font-size: 14px;
+  font-size: 3.7333vw;
   color: #f5222d;
-  margin-bottom: 12px;
+  margin-bottom: 3.2vw;
 }
 .detail-btn {
-  border: 1px solid #4285f4;
+  border: 0.2667vw solid #4285f4;
   color: #4285f4;
   background-color: transparent;
-  border-radius: 4px;
-  padding: 6px 12px;
-  font-size: 14px;
+  border-radius: 1.0667vw;
+  padding: 1.6vw 3.2vw;
+  font-size: 3.7333vw;
   cursor: pointer;
 }
 .detail-btn:hover {

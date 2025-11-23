@@ -68,22 +68,22 @@ export default {
 .top-header {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 4.267vw; /* 16px */
   background-color: #f8f9fa;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.267vw solid #eee; /* 1px */
   position: relative;
 }
 
 .back-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 5.333vw; /* 20px */
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 1.067vw 2.133vw; /* 4px 8px */
 }
 
 .match-title {
-  font-size: 18px;
+  font-size: 4.8vw; /* 18px */
   font-weight: 600;
   margin: 0;
   flex: 1;
@@ -92,15 +92,15 @@ export default {
 
 .match-type {
   position: absolute;
-  right: 16px;
-  font-size: 14px;
+  right: 4.267vw; /* 16px */
+  font-size: 3.733vw; /* 14px */
 }
 
 /* 状态样式 */
 .match-status {
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   text-align: center;
-  padding: 12px 0;
+  padding: 3.2vw 0; /* 12px 0 */
   font-weight: 500;
 }
 

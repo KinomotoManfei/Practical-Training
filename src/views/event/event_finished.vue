@@ -147,29 +147,29 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: #fff;
   min-height: 100vh;
-  padding-bottom: 20px;
+  padding-bottom: 5.333vw; /* 20px */
 }
 
 /* 顶部导航 */
 .top-nav {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 4.267vw; /* 16px */
   background-color: #f8f9fa;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.267vw solid #eee; /* 1px */
   position: relative;
 }
 
 .back-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 5.333vw; /* 20px */
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 1.067vw 2.133vw; /* 4px 8px */
 }
 
 .match-title {
-  font-size: 18px;
+  font-size: 4.8vw; /* 18px */
   font-weight: 600;
   margin: 0;
   flex: 1;
@@ -178,19 +178,19 @@ export default {
 
 .match-type {
   color: #4caf50; /* 足球绿色 */
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
   position: absolute;
-  right: 16px;
+  right: 4.267vw; /* 16px */
 }
 
 /* 比赛状态 */
 .match-status {
   color: #666; /* 已结束灰色 */
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   text-align: center;
-  padding: 12px 0;
+  padding: 3.2vw 0; /* 12px 0 */
   font-weight: 500;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.267vw solid #eee; /* 1px */
 }
 
 /* 比分区域 */
@@ -198,8 +198,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+  padding: 5.333vw 0; /* 20px 0 */
+  border-bottom: 0.267vw solid #eee; /* 1px */
 }
 
 .team {
@@ -210,19 +210,19 @@ export default {
 }
 
 .team-logo {
-  width: 60px;
-  height: 60px;
+  width: 16vw; /* 60px */
+  height: 16vw; /* 60px */
   border-radius: 50%;
   background-color: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 6.4vw; /* 24px */
+  margin-bottom: 2.133vw; /* 8px */
 }
 
 .team-name {
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   font-weight: 500;
 }
 
@@ -231,60 +231,60 @@ export default {
 }
 
 .main-score {
-  font-size: 36px;
+  font-size: 9.6vw; /* 36px */
   font-weight: bold;
-  margin: 0 0 8px 0;
+  margin: 0 0 2.133vw 0; /* 0 0 8px 0 */
 }
 
 .half-scores {
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
   color: #666;
-  margin: 0 0 4px 0;
+  margin: 0 0 1.067vw 0; /* 0 0 4px 0 */
 }
 
 .match-time, .match-venue {
-  font-size: 12px;
+  font-size: 3.2vw; /* 12px */
   color: #888;
-  margin: 2px 0;
+  margin: 0.533vw 0; /* 2px 0 */
 }
 
 /* 通用区域标题 */
 .section-title {
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   font-weight: 600;
-  padding: 16px 16px 8px;
+  padding: 4.267vw 4.267vw 2.133vw; /* 16px 16px 8px */
   margin: 0;
   color: #333;
 }
 
 /* 详细战报 */
 .report-content {
-  padding: 0 16px 16px;
+  padding: 0 4.267vw 4.267vw; /* 0 16px 16px */
   margin: 0;
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
   line-height: 1.6;
   color: #555;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.267vw solid #eee; /* 1px */
 }
 
 /* 技术统计 */
 .stats-section {
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.267vw solid #eee; /* 1px */
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
+  gap: 0.267vw; /* 1px */
   background-color: #f5f5f5;
 }
 
 .stat-item {
   background-color: #fff;
-  padding: 12px 16px;
+  padding: 3.2vw 4.267vw; /* 12px 16px */
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
 }
 
 .stat-name {
@@ -297,19 +297,19 @@ export default {
 
 /* 球员评分 */
 .players-rating {
-  border-bottom: 1px solid #eee;
+  border-bottom: 0.267vw solid #eee; /* 1px */
 }
 
 .team-ratings {
-  margin-bottom: 16px;
+  margin-bottom: 4.267vw; /* 16px */
 }
 
 .player-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid #f5f5f5;
+  padding: 3.2vw 4.267vw; /* 12px 16px */
+  border-bottom: 0.267vw solid #f5f5f5; /* 1px */
 }
 
 .player-info {
@@ -318,17 +318,17 @@ export default {
 }
 
 .player-icon {
-  margin-right: 8px;
-  font-size: 16px;
+  margin-right: 2.133vw; /* 8px */
+  font-size: 4.267vw; /* 16px */
 }
 
 .player-name {
-  font-size: 14px;
-  margin-right: 16px;
+  font-size: 3.733vw; /* 14px */
+  margin-right: 4.267vw; /* 16px */
 }
 
 .player-score {
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
   font-weight: 500;
   color: #1677ff;
 }
@@ -339,7 +339,7 @@ export default {
 
 .star {
   color: #ddd;
-  margin-left: 2px;
+  margin-left: 0.533vw; /* 2px */
 }
 
 .star.filled {
@@ -349,19 +349,19 @@ export default {
 /* 精彩瞬间 */
 .highlights-tabs {
   display: flex;
-  padding: 0 16px;
-  margin-bottom: 12px;
+  padding: 0 4.267vw; /* 0 16px */
+  margin-bottom: 3.2vw; /* 12px */
 }
 
 .tab-btn {
   flex: 1;
-  padding: 8px 0;
+  padding: 2.133vw 0; /* 8px 0 */
   background-color: #f5f5f5;
   border: none;
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
   cursor: pointer;
-  margin-right: 8px;
-  border-radius: 4px;
+  margin-right: 2.133vw; /* 8px */
+  border-radius: 1.067vw; /* 4px */
 }
 
 .tab-btn:last-child {
@@ -375,27 +375,27 @@ export default {
 
 .highlights-carousel {
   position: relative;
-  padding: 0 16px;
+  padding: 0 4.267vw; /* 0 16px */
 }
 
 .highlight-img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 2.133vw; /* 8px */
   display: block;
 }
 
 .carousel-dots {
   display: flex;
   justify-content: center;
-  margin-top: 12px;
+  margin-top: 3.2vw; /* 12px */
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 2.133vw; /* 8px */
+  height: 2.133vw; /* 8px */
   border-radius: 50%;
   background-color: #ddd;
-  margin: 0 4px;
+  margin: 0 1.067vw; /* 0 4px */
 }
 
 .dot.active {

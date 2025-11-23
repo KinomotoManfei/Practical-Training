@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- 顶部导航栏 -->
     <header class="top-header">
       <div class="tab-bar">
         <button
@@ -13,8 +12,8 @@
 
         <button
           class="tab-btn"
-          :class="{ active: currentTab === 'all' }"
-          @click="currentTab = 'all'"
+          :class="{ active: currentTab === 'follow' }"
+          @click="currentTab = 'follow'"
         >
           订阅
         </button>
@@ -61,10 +60,8 @@
       </div>
     </header>
 
-    <!-- 日期区域 -->
     <div class="date-section">今天 10月27日 星期一</div>
 
-    <!-- 比赛列表（根据当前Tab显示对应内容） -->
     <div class="match-list">
       <MatchCard v-for="(item, index) in filteredMatches" :key="index" :match="item" />
     </div>
@@ -80,10 +77,9 @@ export default {
   components: { MatchCard },
   data() {
     return {
-      currentTab: 'all', // 默认激活"关注"Tab
-      showMore: false, // 控制更多Tab的显示/隐藏
-      // 模拟比赛数据（包含分类信息）
-      matchData: [//羽毛球要考虑单双打_其他运动的single属性无效
+      currentTab: 'all',
+      showMore: false,
+      matchData: [
         { id: 1, type: 'follow', league: '校足球联赛', home: '计算机学院', away: '管理学院', num:11, score: '2-1', status: '已结束',teamIcon: '⚽',time:'2025-10-11',single: false,sports:'football',sportsType:'足球' },
         { id: 2, type: 'football', league: '校足球联赛', home: '电子学院', away: '文学院', num:10, score: '0-0', status: '进行中',teamIcon: '⚽',time:'2025-10-11',single: false,sports:'football' ,sportsType:'足球'},
         { id: 3, type: 'important', league: '省大学生篮球赛', home: '法学院', away: '医学院', num:9, score: '56-48', status: '已结束',teamIcon: '🏀' ,time:'2025-10-11',single: false,sports:'basketball',sportsType:'篮球'},
@@ -93,10 +89,9 @@ export default {
     };
   },
   computed: {
-    // 根据当前Tab过滤比赛数据
     filteredMatches() {
       if (this.currentTab === 'all') {
-        return this.matchData; // 全部Tab显示所有比赛
+        return this.matchData;
       }
       return this.matchData.filter(item => item.type === this.currentTab);
     }
@@ -112,41 +107,54 @@ export default {
   color: #333;
 }
 
-/* 顶部导航栏 */
 .top-header {
   background-color: #fff;
-  padding: 16px 0;
-  border-bottom: 1px solid #eaeaea;
+  padding: 4.2667vw 0;
+  border-bottom: 0.2667vw solid #eaeaea;
 }
 .top-header h1 {
-  font-size: 20px;
+  font-size: 5.3333vw;
   font-weight: 600;
   text-align: center;
-  margin: 0 0 12px 0;
+  margin: 0 0 3.2vw 0;
 }
 
-/* Tab栏样式 */
 .tab-bar {
   display: flex;
-  justify-content: center;
-  gap: 12px;
+  /* 移除justify-content: center，避免居中导致两侧留白 */
+  gap: 3.2vw;
   overflow-x: auto;
-  padding: 0 16px;
+  padding: 0 4.2667vw;
+  white-space: nowrap; /* 强制不换行 */
+}
+
+
+/* 增加滚动指示器（可选） */
+.tab-bar::after {
+  content: '→';
+  position: absolute;
+  right: 2vw;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1677ff;
+  font-size: 4vw;
+  pointer-events: none;
+  opacity: 0.7;
 }
 .tab-btn {
-  padding: 6px 12px;
+  padding: 1.6vw 3.2vw;
+  min-width: auto; /* 允许按钮根据内容自适应宽度 */
   border: none;
   background: transparent;
-  font-size: 14px;
+  font-size: 3.7333vw;
   color: #666;
   cursor: pointer;
   white-space: nowrap;
   position: relative;
   transition: color 0.2s;
 }
-/* 激活状态样式 */
 .tab-btn.active {
-  color: #1677ff; /* 主题色 */
+  color: #1677ff;
   font-weight: 500;
 }
 .tab-btn.active::after {
@@ -155,11 +163,10 @@ export default {
   bottom: 0;
   left: 10%;
   width: 80%;
-  height: 2px;
+  height: 0.5333vw;
   background-color: #1677ff;
-  border-radius: 1px;
+  border-radius: 0.2667vw;
 }
-/* 悬停效果 */
 .tab-btn:not(.active):hover {
   color: #333;
 }
@@ -167,45 +174,41 @@ export default {
 .tab-more {
   border: none;
   background: transparent;
-  font-size: 16px;
+  font-size: 4.2667vw;
   color: #666;
   cursor: pointer;
-  padding: 0 8px;
+  padding: 0 2.1333vw;
 }
 
-/* 更多Tab选项 */
 .more-tabs {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  padding: 8px 16px;
+  gap: 3.2vw;
+  padding: 2.1333vw 4.2667vw;
   background-color: #fff;
-  border-top: 1px solid #f0f0f0;
+  border-top: 0.2667vw solid #f0f0f0;
 }
 
-/* 日期区域 */
 .date-section {
-  padding: 12px 16px;
+  padding: 3.2vw 4.2667vw;
   color: #888;
-  font-size: 13px;
+  font-size: 3.4667vw;
   background-color: #f8f9fa;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 0.2667vw solid #eaeaea;
 }
 
-/* 比赛列表 */
 .match-list {
-  padding: 16px;
+  padding: 4.2667vw;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 3.2vw;
 }
 
-/* 底部导航 */
 .footer-nav {
   display: flex;
   justify-content: space-around;
-  padding: 8px 0;
-  border-top: 1px solid #eee;
+  padding: 2.1333vw 0;
+  border-top: 0.2667vw solid #eee;
   background-color: #fff;
   margin-top: auto;
 }
@@ -219,10 +222,10 @@ export default {
   color: #4285f4;
 }
 .icon {
-  font-size: 20px;
+  font-size: 5.3333vw;
 }
 .nav-label {
-  font-size: 12px;
-  margin-top: 4px;
+  font-size: 3.2vw;
+  margin-top: 1.0667vw;
 }
 </style>

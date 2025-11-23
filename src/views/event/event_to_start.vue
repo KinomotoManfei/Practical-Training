@@ -72,19 +72,17 @@
 <script>
 export default {
   name: 'MatchDetail',
-  // Vue 2 中通过 data 定义响应式数据
   data() {
     return {
       isSubscribed: false // 订阅状态（响应式）
     }
   },
-  // Vue 2 中通过 methods 定义方法
   methods: {
-    // 返回上一页（Vue 2 中使用 this.$router）
+    // 返回上一页
     golastpage() {
       this.$router.go(-1);
     },
-    // 切换订阅状态（Vue 2 中直接操作 this 上的属性）
+    // 切换订阅状态
     toggleSubscribe() {
       this.isSubscribed = !this.isSubscribed;
     }
@@ -95,7 +93,7 @@ export default {
 <style scoped>
 .match-detail {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  padding: 16px;
+  padding: 4.267vw; /* 16px */
   background-color: #fff;
   min-height: 100vh;
   box-sizing: border-box;
@@ -105,20 +103,20 @@ export default {
 .top-nav {
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 6.4vw; /* 24px */
   position: relative;
 }
 
 .back-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 5.333vw; /* 20px */
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 1.067vw 2.133vw; /* 4px 8px */
 }
 
 .match-title {
-  font-size: 18px;
+  font-size: 4.8vw; /* 18px */
   font-weight: 600;
   flex: 1;
   text-align: center;
@@ -127,7 +125,7 @@ export default {
 
 .match-type {
   color: #4285f4;
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
   position: absolute;
   right: 0;
   top: 50%;
@@ -137,29 +135,29 @@ export default {
 /* 比赛状态 */
 .match-status {
   color: #4285f4;
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   text-align: center;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 6.4vw; /* 24px */
+  padding-bottom: 4.267vw; /* 16px */
+  border-bottom: 0.267vw solid #eee; /* 1px */
 }
 
 /* 比赛信息 */
 .match-info {
-  margin-bottom: 24px;
+  margin-bottom: 6.4vw; /* 24px */
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
-  font-size: 14px;
+  margin-bottom: 3.2vw; /* 12px */
+  font-size: 3.733vw; /* 14px */
   color: #333;
 }
 
 .icon {
-  margin-right: 8px;
-  width: 20px;
+  margin-right: 2.133vw; /* 8px */
+  width: 5.333vw; /* 20px */
   text-align: center;
 }
 
@@ -168,7 +166,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 32px 0;
+  margin: 8.533vw 0; /* 32px 0 */
 }
 
 .team {
@@ -179,24 +177,24 @@ export default {
 }
 
 .team-logo {
-  width: 80px;
-  height: 80px;
+  width: 21.333vw; /* 80px */
+  height: 21.333vw; /* 80px */
   border-radius: 50%;
   background-color: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  margin-bottom: 12px;
+  font-size: 6.4vw; /* 24px */
+  margin-bottom: 3.2vw; /* 12px */
 }
 
 .team-name {
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   font-weight: 500;
 }
 
 .vs {
-  font-size: 24px;
+  font-size: 6.4vw; /* 24px */
   font-weight: bold;
   color: #666;
 }
@@ -205,28 +203,28 @@ export default {
 .recent-records {
   text-align: center;
   color: #666;
-  font-size: 14px;
-  margin-bottom: 32px;
-  padding: 8px;
+  font-size: 3.733vw; /* 14px */
+  margin-bottom: 8.533vw; /* 32px */
+  padding: 2.133vw; /* 8px */
   background-color: #f9f9f9;
-  border-radius: 4px;
+  border-radius: 1.067vw; /* 4px */
 }
 
 /* 报名区域 */
 .registration {
   text-align: center;
-  margin-bottom: 32px;
-  padding: 16px;
+  margin-bottom: 8.533vw; /* 32px */
+  padding: 4.267vw; /* 16px */
   background-color: #f9f9f9;
-  border-radius: 8px;
+  border-radius: 2.133vw; /* 8px */
 }
 
 .registration-info {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
-  font-size: 14px;
+  margin-bottom: 4.267vw; /* 16px */
+  font-size: 3.733vw; /* 14px */
   color: #333;
 }
 
@@ -234,48 +232,48 @@ export default {
   background-color: #ffcc00;
   color: #333;
   border: none;
-  border-radius: 20px;
-  padding: 10px 32px;
-  font-size: 16px;
+  border-radius: 5.333vw; /* 20px */
+  padding: 2.667vw 8.533vw; /* 10px 32px */
+  font-size: 4.267vw; /* 16px */
   font-weight: 600;
   cursor: pointer;
-  margin-bottom: 12px;
+  margin-bottom: 3.2vw; /* 12px */
 }
 
 .deadline {
-  font-size: 12px;
+  font-size: 3.2vw; /* 12px */
   color: #666;
 }
 
 /* 比赛亮点 */
 .highlights {
-  margin-bottom: 32px;
+  margin-bottom: 8.533vw; /* 32px */
 }
 
 .section-title {
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 3.2vw; /* 12px */
   color: #333;
 }
 
 .highlight-list {
-  padding-left: 20px;
+  padding-left: 5.333vw; /* 20px */
   color: #666;
-  font-size: 14px;
+  font-size: 3.733vw; /* 14px */
 }
 
 .highlight-list li {
-  margin-bottom: 8px;
+  margin-bottom: 2.133vw; /* 8px */
 }
 
 /* 订阅提醒 */
 .subscribe-section {
   position: fixed;
-  bottom: 20px;
+  bottom: 5.333vw; /* 20px */
   left: 0;
   right: 0;
-  padding: 0 16px;
+  padding: 0 4.267vw; /* 0 16px */
 }
 
 .subscribe-btn {
@@ -285,14 +283,14 @@ export default {
   width: 100%;
   background-color: #f5f5f5;
   border: none;
-  border-radius: 20px;
-  padding: 10px 0;
-  font-size: 14px;
+  border-radius: 5.333vw; /* 20px */
+  padding: 2.667vw 0; /* 10px 0 */
+  font-size: 3.733vw; /* 14px */
   cursor: pointer;
 }
 
 .heart-icon {
-  margin-right: 8px;
+  margin-right: 2.133vw; /* 8px */
 }
 
 .heart-icon.active {

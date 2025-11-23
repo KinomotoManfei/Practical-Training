@@ -118,31 +118,31 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: #f5f5f5;
   min-height: 100vh;
-  padding-bottom: 20px;
+  padding-bottom: 5.333vw; /* 20px */
 }
 
 /* 顶部导航 */
 .top-nav {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 4.267vw; /* 16px */
   background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  margin-bottom: 16px;
+  box-shadow: 0 0.267vw 0.8vw rgba(0,0,0,0.1); /* 1px 3px */
+  margin-bottom: 4.267vw; /* 16px */
 }
 
 .back-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 5.333vw; /* 20px */
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 1.067vw 2.133vw; /* 4px 8px */
 }
 
 .page-title {
-  font-size: 18px;
+  font-size: 4.8vw; /* 18px */
   font-weight: 600;
-  margin: 0 0 0 12px;
+  margin: 0 0 0 3.2vw; /* 12px */
 }
 
 /* 球队信息摘要 */
@@ -150,34 +150,34 @@ export default {
   display: flex;
   align-items: center;
   background-color: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  margin: 0 16px 16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  padding: 4.267vw; /* 16px */
+  border-radius: 2.133vw; /* 8px */
+  margin: 0 4.267vw 4.267vw; /* 16px */
+  box-shadow: 0 0.267vw 0.8vw rgba(0,0,0,0.05); /* 1px 3px */
 }
 
 .team-logo {
-  width: 60px;
-  height: 60px;
+  width: 16vw; /* 60px */
+  height: 16vw; /* 60px */
   border-radius: 50%;
   background-color: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  margin-right: 16px;
+  font-size: 6.4vw; /* 24px */
+  margin-right: 4.267vw; /* 16px */
 }
 
 .team-name {
-  font-size: 16px;
+  font-size: 4.267vw; /* 16px */
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 2.133vw; /* 8px */
 }
 
 .team-stats {
   display: flex;
-  gap: 16px;
-  font-size: 12px;
+  gap: 4.267vw; /* 16px */
+  font-size: 3.2vw; /* 12px */
   color: #666;
 }
 
@@ -186,24 +186,23 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px 12px;
-  margin: 0 16px 12px;
-  border-bottom: 1px solid #eee;
+  padding: 0 4.267vw 3.2vw; /* 16px 12px */
+  margin: 0 4.267vw 3.2vw; /* 16px 12px */
 }
 
 .section-header h2 {
-  font-size: 16px;
+  font-size:  4.267vw; /* 16px */
   margin: 0;
 }
 
 .count {
-  font-size: 12px;
+  font-size: 3.2vw;
   color: #888;
 }
 
 /* 球员列表 */
 .players-list {
-  padding: 0 16px;
+  padding: 0 4.267vw;
 }
 
 /* 球员卡片（复用多个） */
